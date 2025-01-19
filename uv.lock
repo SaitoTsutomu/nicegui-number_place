@@ -1,6 +1,12 @@
 version = 1
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "nicegui-number-place",
+    "tools",
+]
+
 [[package]]
 name = "aiofiles"
 version = "24.1.0"
@@ -861,6 +867,11 @@ sdist = { url = "https://files.pythonhosted.org/packages/1a/4c/9b5764bd22eec91c4
 wheels = [
     { url = "https://files.pythonhosted.org/packages/96/00/2b325970b3060c7cecebab6d295afe763365822b1306a12eeab198f74323/starlette-0.41.3-py3-none-any.whl", hash = "sha256:44cedb2b7c77a9de33a8b74b2b90e9f50d11fcf25d8270ea525ad71a25374ff7", size = 73225 },
 ]
+
+[[package]]
+name = "tools"
+version = "0.1.0"
+source = { virtual = "src/tools" }
 
 [[package]]
 name = "typing-extensions"
