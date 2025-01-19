@@ -1,0 +1,50 @@
+[project]
+authors = [{name = "Saito Tsutomu", email = "tsutomu7@hotmail.co.jp"}]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python",
+  "Topic :: Software Development",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "nicegui>=2.9.1",
+  "numpy>=2.2.1",
+]
+description = "Number Place puzzle on NiceGUI"
+license = {text = "Apache-2.0"}
+name = "nicegui-number_place"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[project.urls]
+homepage = "https://github.com/SaitoTsutomu/nicegui-number_place"
+
+[project.scripts]
+number-place = "nicegui_number_place:main"
+
+[tool.uv]
+dev-dependencies = [
+  "mip>=1.15.0",
+  "pytest>=8.3.4",
+]
+
+[tool.mypy]
+files = "src"
+ignore_missing_imports = true
+
+[tool.ruff]
+src = ["src"]
+
+[tool.ruff.lint]
+ignore = ["ANN", "CPY", "D", "DOC", "E501"]
+preview = true
+select = ["ALL"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
