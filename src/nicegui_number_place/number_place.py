@@ -1,7 +1,6 @@
 import secrets
 from functools import partial
 from pathlib import Path
-from typing import ClassVar
 
 import numpy as np
 from nicegui import elements, events, ui
@@ -17,7 +16,6 @@ class Game:
     message = ""  # 判定メッセージ
     select = 0  # 選択
     select_buttons: list[elements.button]  # 選択用ボタン
-    SELECT_COLOR: ClassVar[str] = "bg-green-300"  # 選択時の色
 
     def __init__(self):
         self.board_num = np.zeros((9, 9), dtype=np.int8)
@@ -66,25 +64,25 @@ class Game:
                 value = self.board_num[x, y]
                 label = self.labels[x][y]
                 label.text = str(value) if value else ""
-                label.classes(remove="cursor-pointer font-bold text-red text-blue")
                 if not value:
                     continue
                 if self.board_fix[x, y]:
-                    label.classes("font-bold")
+                    label.classes("font-bold", remove="cursor-pointer")
                 else:
-                    label.classes("cursor-pointer")
+                    label.classes("cursor-pointer", remove="font-bold")
+                label.classes(remove="text-red text-blue")
                 if self.board_err[x, y]:
-                    label.classes("text-red")
+                    label.classes("text-red", remove="text-blue")
                 elif self.board_num[x, y] == self.select:
-                    label.classes("text-blue")
+                    label.classes("text-blue", remove="text-red")
         # 選択ボタンの色
         for i in range(10):
             button = self.select_buttons[i]
-            button.classes(remove="bg-green-500 " + self.SELECT_COLOR)
+            button.classes(remove="bg-green-500 bg-green-300")
             if i and (self.board_num == i).sum() >= 9:  # noqa: PLR2004
                 button.classes("bg-green-500")
             elif i == self.select:
-                button.classes(self.SELECT_COLOR)
+                button.classes("bg-green-300")
 
     def judge(self) -> str:
         """終局判定"""
