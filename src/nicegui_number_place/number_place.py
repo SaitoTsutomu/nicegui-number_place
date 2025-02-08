@@ -23,7 +23,7 @@ class Game:
         self.board_err = np.zeros((9, 9), dtype=bool)
         ui.label().bind_text(self, "message").classes("text-3xl")
         classes = "w-12 h-12 leading-normal text-3xl text-center border border-black cursor-default"
-        with ui.row():
+        with ui.row().style("user-select: none;"):
             with ui.grid(columns=9).classes("gap-0"):
                 self.labels = []
                 for x in range(9):
