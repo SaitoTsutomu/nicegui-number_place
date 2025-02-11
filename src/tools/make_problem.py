@@ -1,10 +1,12 @@
+"""問題作成"""
+
 from pathlib import Path
 
 import numpy as np
 from mip import Model, maximize, xsum
 
 
-def solve(board: np.ndarray, prize: np.ndarray, *, check_only_one=False) -> tuple[bool, np.ndarray]:
+def solve(board: np.ndarray, prize: np.ndarray, *, check_only_one: bool = False) -> tuple[bool, np.ndarray]:
     """求解
 
     :param board: 固定値

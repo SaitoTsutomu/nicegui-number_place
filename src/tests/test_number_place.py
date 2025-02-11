@@ -1,8 +1,10 @@
+"""テスト"""
+
 # flake8: noqa: S101
 from nicegui_number_place import Game
 
 
-def test_game():
+def test_game() -> None:
     """ゲームのテスト"""
     game = Game()
     data = b"502173869698542137371896524469328751827415693135769248284951376753684912916237485"

@@ -1,3 +1,5 @@
+"""nicegui_number_place"""
+
 from importlib.metadata import metadata
 
 from .number_place import Game, main

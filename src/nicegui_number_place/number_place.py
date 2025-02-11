@@ -1,3 +1,5 @@
+"""nicegui_number_place"""
+
 import secrets
 from functools import partial
 from pathlib import Path
@@ -17,7 +19,8 @@ class Game:
     select = 0  # 選択
     select_buttons: list[elements.button]  # 選択用ボタン
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """初期化とGUI作成"""
         self.board_num = np.zeros((9, 9), dtype=np.int8)
         self.board_fix = np.zeros((9, 9), dtype=bool)
         self.board_err = np.zeros((9, 9), dtype=bool)
@@ -115,7 +118,7 @@ class Game:
             self.board_num[x, y] = 0 if self.board_num[x, y] == self.select else self.select
             self.rebuild()
 
-    def select_click(self, event) -> None:
+    def select_click(self, event: events.ClickEventArguments) -> None:
         """選択のクリック"""
         text = event.sender.text
         self.select = 0 if text == "erase" else int(text)
@@ -137,6 +140,7 @@ class Game:
         self.from_bytes(ev.content.read())
 
 
-def main(*, reload=False, port=8103):
+def main(*, reload: bool = False, port: int = 8103) -> None:
+    """ゲーム実行"""
     Game()
     ui.run(title="Number Place", reload=reload, port=port)

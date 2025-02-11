@@ -1,3 +1,5 @@
+"""`number-place`実行"""
+
 # ruff: noqa: T201
 from pathlib import Path
 
