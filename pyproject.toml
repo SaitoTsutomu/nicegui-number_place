@@ -8,15 +8,15 @@ classifiers = [
   "Topic :: Scientific/Engineering",
 ]
 dependencies = [
-  "nicegui>=2.11.0",
-  "numpy>=2.2.2",
+  "nicegui>=2.11.1",
+  "numpy>=2.2.3",
 ]
 description = "Number Place puzzle on NiceGUI"
 license = {text = "Apache-2.0"}
 name = "nicegui-number_place"
 readme = "README.md"
 requires-python = ">=3.12"
-version = "0.1.1"
+version = "0.1.2"
 
 [project.urls]
 homepage = "https://github.com/SaitoTsutomu/nicegui-number_place"
