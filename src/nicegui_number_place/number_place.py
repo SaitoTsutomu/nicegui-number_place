@@ -140,7 +140,7 @@ class Game:
         self.from_bytes(ev.content.read())
 
 
-def main(*, reload: bool = False, port: int = 8103) -> None:
+def run_game(*, port: int | None = None) -> None:
     """ゲーム実行"""
     Game()
-    ui.run(title="Number Place", reload=reload, port=port)
+    ui.run(title="Number Place", reload=False, port=port)

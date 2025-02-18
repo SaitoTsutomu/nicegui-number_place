@@ -8,6 +8,7 @@ classifiers = [
   "Topic :: Scientific/Engineering",
 ]
 dependencies = [
+  "fire>=0.7.0",
   "nicegui>=2.11.1",
   "numpy>=2.2.3",
 ]
@@ -16,7 +17,7 @@ license = {text = "Apache-2.0"}
 name = "nicegui-number_place"
 readme = "README.md"
 requires-python = ">=3.12"
-version = "0.1.2"
+version = "0.1.3"
 
 [project.urls]
 homepage = "https://github.com/SaitoTsutomu/nicegui-number_place"
